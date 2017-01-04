@@ -1,9 +1,17 @@
-<h1>
-  {{title}}
-</h1>
-<form #form="ngForm">
-  <input type="text" placeholder="Name" name="name" ngModel>
-  <button type="submit">OK</button>
-</form>
 
-{{ form.pristine }}
+<div class="container"> 
+  <h1>
+    {{title}}
+  </h1>
+  <form #form="ngForm">
+    <div class="form-group">
+      <label>First Name</label>
+      <input type="text" class="form-control" placeholder="Name" name="name" ngModel required>
+    </div>
+    <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" class="form-control" placeholder="Last Name" name="lastName" ngModel required>
+    </div>    
+    <button class="btn btn-primary" type="submit">OK</button>
+  </form> 
+</div>
