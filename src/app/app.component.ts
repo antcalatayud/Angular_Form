@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular2 Form Example';
+  title = 'Employee Form';
+  languages = ['English', 'Spanish', 'Other']
 }
