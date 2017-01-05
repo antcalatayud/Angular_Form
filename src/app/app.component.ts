@@ -12,7 +12,7 @@ import { NgForm } from '@angular/forms';
 export class AppComponent implements OnInit {
   title : string = 'Employee Form';
   languages : string[] = [];
-  model = new Employee('','', true, 'low', 'default');
+  model = new Employee('','', true, 'low', 'default', new Date());
   hasPrimaryLanguageError : boolean = false;
 
   constructor(private formPosterService: FormPosterService){}

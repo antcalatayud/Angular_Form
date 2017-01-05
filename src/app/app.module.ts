@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { AlertModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { DatepickerModule } from 'ng2-bootstrap/datepicker';
+import { ButtonsModule } from 'ng2-bootstrap/buttons';
 import { FormPosterService } from './services/form-poster.service';
 
 import { AppComponent } from './app.component';
@@ -15,7 +16,8 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     HttpModule,
-    AlertModule
+    DatepickerModule.forRoot(),
+    ButtonsModule.forRoot()
   ],
   providers: [FormPosterService],
   bootstrap: [AppComponent]

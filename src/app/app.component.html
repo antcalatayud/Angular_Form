@@ -14,25 +14,30 @@
       <input #lastName="ngModel" type="text" class="form-control" placeholder="Last Name" name="lastName" [(ngModel)]="model.lastName" required>
       <div *ngIf="lastName.invalid && lastName.dirty" class="alert alert-danger">Last Name is required</div>
     </div>  
-    <div class="chechbox">
-      <label>
-        <input type="checkbox" name="isFullTime" [(ngModel)]="model.isFullTime"> Full Time Employee
-      </label>
+    <div>
+      <label>Is full time employee?</label> 
+      <div>
+      <button type="button" class="btn" name="isFullTime" 
+            [class.btn-primary]="model.isFullTime === true"    
+            [(ngModel)]="model.isFullTime" btnCheckbox>
+            {{model.isFullTime}}
+        </button>
+      </div>
     </div>
     <label>Tax Range</label>
-    <div class="radio">
-      <label>
-        <input type="radio" name="taxRange"
-        value="low" checked [(ngModel)]="model.taxRange" required>
-         Low range (20%)
+    <div>
+      <div class="btn-group"> 
+        <label class="btn" name="taxRange"
+        [class.btn-primary]="model.taxRange === 'low'"
+        [(ngModel)]="model.taxRange" btnRadio="low">
+        Low range (20%)
         </label>
-    </div>
-    <div class="radio">
-      <label>
-        <input type="radio" name="taxRange"
-        value="high" [(ngModel)]="model.taxRange">
-         High range (40%)
+        <label class="btn" name="taxRange"
+        [class.btn-primary]="model.taxRange === 'high'"
+        [(ngModel)]="model.taxRange" btnRadio="high">
+        High range (40%)
         </label>
+      </div>
     </div>
     <div class="form-group" [class.has-error]="hasPrimaryLanguageError">
       <label class="control-label">Primary Language</label>
@@ -48,13 +53,18 @@
       </select>
     </div>
     <!--TODO. Use 3rd party form-->
-    <!--<div class="form-group">
-      <label>Date Hired </label>
-      <input type="date" class="form-control" name="dateHired" ngModel required>
-    </div>-->
+    <div class="form-group" style="display: inline-block">
+      <label>Date Hired</label>
+      <datepicker name="model.startDate" [(ngModel)]="startDate" 
+      name="dateHired" [showWeeks]="false">
+
+      </datepicker>
+    </div>
+    <div class="form-group">
     <button class="btn btn-primary" type="submit"
     [disabled]="form.invalid || primaryLanguage.value == 'default'">
     OK
     </button>
+    </div>
   </form>
 </div>
