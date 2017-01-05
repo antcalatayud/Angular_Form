@@ -42,7 +42,7 @@
         [(ngModel)]="model.primaryLanguage"
         >
         <option value="default">Select a Language...</option>
-        <option *ngFor="let language of languages">
+        <option *ngFor="let language of languages" value="{{language}}">
           {{language}}
         </option>
       </select>
