@@ -3,7 +3,7 @@
   <h1>
     {{title}}
   </h1>
-  <form #form="ngForm" novalidate>
+  <form #form="ngForm" (submit)="submitForm(form)" novalidate>
     <div class="form-group" [class.has-error]="firstName.invalid && firstName.dirty">
       <label class="control-label">First Name</label>
       <input #firstName="ngModel" type="text" class="form-control" placeholder="Name" name="name" [(ngModel)]="model.firstName" required>
